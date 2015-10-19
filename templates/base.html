@@ -1,0 +1,74 @@
+{% extends 'foundation/base.html' %}
+{% load staticfiles %}
+
+{% block base_title %}
+<title>{% block title %}Домашняя студия йоги "Ёж" в Киеве{% endblock title %}</title>
+{% endblock base_title %}
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'pages/css/core.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'foundation/css/foundation-icons.css' %}">
+{% endblock css %}
+
+{% block base_body %}
+<header>
+  <nav id="topbar" class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name"><h1><a href="/"><img class="left" id="logo" src="{% static 'pages/images/logo.jpg' %}" alt="Домашняя студия йоги \"Ёж\" в Киеве"><span class="show-for-large-up left">Домашняя студия йоги &laquo;Ёж&raquo; в Киеве</span></a></h1></li>
+
+           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Меню</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="right">
+            <li><a href="#">О студии</a></li>
+            <li><a href="#">Блог</a></li>
+            <li><a href="#">Занятия</a></li>
+            <li><a href="#">Фото</a></li>
+            <li><a href="#">Вопросы и ответы</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </section>  
+  </nav>
+</header>
+
+<main>
+{% block content %}{% endblock content %}
+</main>
+
+<footer class="footer">
+  <div class="row">
+    <div class="small-12 medium-6 large-5 columns">
+      <p class="logo"><i class="fi-shield"></i> Ёж-студия</p> 
+      <p class="footer-links">
+        <a href="#">О нас</a>
+        <a href="#">Блог</a>
+        <a href="#">Занятия</a>
+        <a href="#">Фото</a>
+        <a href="#">Вопросы и ответы</a>
+        <a href="#">Контакты</a>
+      </p>
+      <p class="copywrite">Здесь можно влепить копирайт © 2015</p>
+    </div>
+    <div class="small-12 medium-6 large-4 columns">
+      <ul class="contact">
+        <li><p><i class="fi-marker"></i>Такая-то ул. 25, Киев</p></li>
+        <li><p><i class="fi-telephone"></i>+38-656-453-99</p></li>
+        <li><p><i class="fi-mail"></i>contact@yozh-studio.ru</p></li>
+      </ul>
+    </div>
+    <div class="small-12 medium-12 large-3 columns">
+      <p class="about">О студии</p>
+      <p class="about subheader">Здесь можно ещё что-нибудь написать.</p>
+      <ul class="inline-list social">
+        <a href="#"><i class="fi-social-facebook"></i></a>
+        <a href="#"><i class="fi-social-twitter"></i></a>
+        <a href="#"><i class="fi-social-linkedin"></i></a>
+        <a href="#"><i class="fi-social-github"></i></a>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+{% endblock base_body %}

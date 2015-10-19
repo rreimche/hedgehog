@@ -1,0 +1,39 @@
+
+#slick_home {
+	display: none;
+}
+
+#slick_home > div {
+	text-align: center;
+}
+
+#slick_home img {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+#slick_home .slick-prev, #slick_home .slick-next {
+	z-index: 9999;
+}
+
+#slick_home .slick-prev {
+	left: 25px;
+}
+
+#slick_home .slick-next {
+	right: 55px;
+}
+
+#slick_home .slick-prev:before, #slick_home .slick-next:before {
+	color: #222;
+	font-size: 95%;
+}
+
+a.fi-social-facebook, a.fi-social-instagram, a.fi-social-twitter {
+	margin-right: 10px;
+}
+
+a.fi-social-facebook:before, a.fi-social-instagram:before, a.fi-social-twitter:before {
+	padding-right: 5px;
+}
