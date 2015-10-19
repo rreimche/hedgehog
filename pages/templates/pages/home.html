@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<div class="slick" id="slick_home">
+<div class="slick row" id="slick_home">
 	<div><img src="{% static 'pages/images/slick_home/1.jpg' %}" alt=""></div>
 	<div><img src="{% static 'pages/images/slick_home/2.jpg' %}" alt=""></div>
 </div>
@@ -63,9 +63,36 @@
 				<a class="fi-social-twitter">twitter</a>
 			</div>
 		</div>
-		<h2>Расписание и цены</h2>
-		<h2>Схема проезда</h2>
+		<h2 class="text-center">Расписание и цены</h2>
+		<div class="row text-center">
+			<iframe src="https://www.google.com/calendar/b/1/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=2&amp;hl=ru&amp;bgcolor=%23FFFFFF&amp;src=roman.reimche%40gmail.com&amp;color=%232952A3&amp;ctz=Africa%2FJohannesburg" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>
+			<div class="medium-6 columns">
+				<p>1 занятие – 100 грн.<br>
+				Абонемент на 8 занятий – 700 грн.<br>
+				Абонемент на 12 занятия – 900 грн.<br>
+				</p>
+			</div>
+			<div class="medium-6 columns">
+				<p>
+				Индивидуальное занятие – 400 грн.<br>
+				Персональная программа<br></p>
+			</div>			
+		</div>
+		<h2 class="text-center">Проезд</h2>
+		<div class="row">
+			<div class="medium-6 columns">
+				<img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?sid=iW2D4rKsOQbUtHiDFsf_CcO3fVY_QPun&width=500&height=400&lang=ru_RU&sourceType=constructor" alt=""/>
+			</div>
+			<div class="medium-6 columns">
+				<p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами.</p>
+			</div>
+		</div>
 		<h2>Контактная форма</h2>
+		<form action="/sendmessage/" method="post">
+		    {% csrf_token %}
+		    {{ contact_form }}
+		    <input type="submit" value="Отправить" />
+		</form>
 	</div>
 </div>
 {% endblock content %}

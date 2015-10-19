@@ -17,13 +17,15 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.sites.models import Site
 from django import views
-from pages import views 
+from pages import views as viewsPages
+from mailers import views as viewsMailers
 
 urlpatterns = [
 	#url(r'^o-studii/$', views.flatpage, {'url': '/o-studii/'}, name='about'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.home, name = "homepage"),
+    url(r'^$', viewsPages.home, name = "homepage"),
     url(r'^pages/', include('pages.urls', namespace="pages")),
+    url(r'^sendmessage/$', viewsMailers.sendmessage, name="sendmessage"),
     #url(r'^(?P<url>.*/)$', views.flatpage),
 ] 
 
