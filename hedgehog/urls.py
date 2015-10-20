@@ -19,6 +19,7 @@ from django.contrib.sites.models import Site
 from django import views
 from pages import views as viewsPages
 from mailers import views as viewsMailers
+from . import settings
 
 urlpatterns = [
     #url(r'^o-studii/$', views.flatpage, {'url': '/o-studii/'}, name='about'),
@@ -28,5 +29,7 @@ urlpatterns = [
     url(r'^sendmessage/$', viewsMailers.sendmessage, name="sendmessage"),
     url(r'^spasibo/$', viewsMailers.thankyou, name="thankyou"),
     url(r'^blog/', include('blog.urls', namespace="blog")),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     #url(r'^(?P<url>.*/)$', views.flatpage),
 ]

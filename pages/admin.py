@@ -3,7 +3,13 @@ from .models import Page
 
 # Register your models here.
 
-class PageAdmin(admin.ModelAdmin):
-	fields=['title', 'content']
+#class PageAdminForm(forms.ModelForm):
+#	content = forms.CharField(widget=CKEditorWidget())
+#	class Meta:
+#		model = Page
 
-admin.site.register(Page, PageAdmin)
+#class PageAdmin(admin.ModelAdmin):
+#	fields=['title', 'content']
+#	form = PageAdminForm
+
+admin.site.register(Page)
