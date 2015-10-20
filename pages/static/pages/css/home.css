@@ -37,3 +37,19 @@ a.fi-social-facebook, a.fi-social-instagram, a.fi-social-twitter {
 a.fi-social-facebook:before, a.fi-social-instagram:before, a.fi-social-twitter:before {
 	padding-right: 5px;
 }
+
+.google-hack {
+    position: relative;
+    padding-bottom: 50%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+}
+.google-hack iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    /*pointer-events: none;*/
+}
+

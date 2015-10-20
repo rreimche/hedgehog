@@ -46,7 +46,8 @@ INSTALLED_APPS = (
     'foundation',
     #'pipeline',
     #'schedule',
-    'mailers'
+    'mailers',
+    'blog'
 )
 
 MIDDLEWARE_CLASSES = (

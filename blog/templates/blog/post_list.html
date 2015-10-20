@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="row">
+	<div class="medium-10 medium-offset-1 columns">
+		<h1>Блог</h1>
+		{% for post in object_list %}
+			<div class="post">
+				<h2>{{post.title}}</h2>
+				{{post.content}}<br>
+				<small>{{post.created}}</small>
+			</div>
+		{% endfor %}
+	</div>
+</div><br><br>
+
+{% endblock content %}

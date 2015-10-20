@@ -27,5 +27,6 @@ urlpatterns = [
     url(r'^pages/', include('pages.urls', namespace="pages")),
     url(r'^sendmessage/$', viewsMailers.sendmessage, name="sendmessage"),
     url(r'^spasibo/$', viewsMailers.thankyou, name="thankyou"),
+    url(r'^blog/', include('blog.urls', namespace="blog")),
     #url(r'^(?P<url>.*/)$', views.flatpage),
 ]
