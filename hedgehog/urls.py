@@ -31,5 +31,6 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls', namespace="blog")),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+    url(r'^gallery/', include('imagestore.urls', namespace='imagestore')),
     #url(r'^(?P<url>.*/)$', views.flatpage),
 ]

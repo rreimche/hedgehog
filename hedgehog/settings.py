@@ -50,6 +50,9 @@ INSTALLED_APPS = (
     'blog',
     'ckeditor',
     'ckeditor_uploader',
+    'imagestore',
+    'sorl.thumbnail',
+    'tagging',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -187,3 +190,7 @@ CKEDITOR_CONFIGS = {
     }
 }
 CKEDITOR_IMAGE_BACKEND = 'pillow'
+
+IMAGESTORE_SHOW_USER = False
+IMAGESTORE_TEMPLATE = 'gallery_base.html'
+#If you want to use prettyPhoto put prettyPhoto to your media directory and include imagesotore/prettyphoto.html to your template
