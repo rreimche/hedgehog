@@ -21,12 +21,11 @@ from pages import views as viewsPages
 from mailers import views as viewsMailers
 
 urlpatterns = [
-	#url(r'^o-studii/$', views.flatpage, {'url': '/o-studii/'}, name='about'),
+    #url(r'^o-studii/$', views.flatpage, {'url': '/o-studii/'}, name='about'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', viewsPages.home, name = "homepage"),
     url(r'^pages/', include('pages.urls', namespace="pages")),
     url(r'^sendmessage/$', viewsMailers.sendmessage, name="sendmessage"),
+    url(r'^spasibo/$', viewsMailers.thankyou, name="thankyou"),
     #url(r'^(?P<url>.*/)$', views.flatpage),
-] 
-
-#admin.site.unregister(Site)
+]

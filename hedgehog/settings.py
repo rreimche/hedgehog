@@ -45,7 +45,7 @@ INSTALLED_APPS = (
     #'django.contrib.flatpages',
     'foundation',
     #'pipeline',
-    'schedule',
+    #'schedule',
     'mailers'
 )
 

@@ -87,12 +87,12 @@
 				<p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами.</p>
 			</div>
 		</div>
-		<h2>Контактная форма</h2>
-		<form action="/sendmessage/" method="post">
-		    {% csrf_token %}
-		    {{ contact_form }}
-		    <input type="submit" value="Отправить" />
-		</form>
+		<h2 class="text-center">Задать нам вопрос</h2>
+		<div class="row">
+			<div class="medium-6 medium-offset-3 columns end text-center">
+				{% include 'mailers/contactform.html' %}
+			</div>
+		</div>
 	</div>
 </div>
 {% endblock content %}

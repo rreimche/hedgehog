@@ -1,0 +1,5 @@
+<form action="/sendmessage/" method="post" class="nolabels">
+    {% csrf_token %}
+    {{ contact_form }}
+    <input type="submit" value="Отправить" class="radius button small" />
+</form>
