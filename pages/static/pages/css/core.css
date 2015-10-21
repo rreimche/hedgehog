@@ -3,6 +3,20 @@ header {
 	margin: 5px 0 1.3em;
 }
 
+/*@media only screen and (min-width: 706px) and (max-width: 774px){
+  #topbar .social {
+    display: none !important;
+  }
+}*/
+
+a.fi-social-facebook, a.fi-social-instagram, a.fi-social-twitter {
+  margin-right: 10px;
+}
+
+a.fi-social-facebook:before, a.fi-social-instagram:before, a.fi-social-twitter:before {
+  padding-right: 5px;
+}
+
 @media only screen and (min-width: 757px){
   #topbar *{
     font-size: 100%;

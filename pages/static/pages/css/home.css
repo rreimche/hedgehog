@@ -30,14 +30,6 @@
 	font-size: 95%;
 }
 
-a.fi-social-facebook, a.fi-social-instagram, a.fi-social-twitter {
-	margin-right: 10px;
-}
-
-a.fi-social-facebook:before, a.fi-social-instagram:before, a.fi-social-twitter:before {
-	padding-right: 5px;
-}
-
 .google-hack {
     position: relative;
     padding-bottom: 50%; // This is the aspect ratio

@@ -1,19 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'blog/blog_base.html' %}
 {% load staticfiles %}
 
-{% block css %}
-{{block.super}}
-<link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
-{% endblock css %}
-
-{% block content %}
-<h1>Блог</h1>
+{% block content_blog %}
+<h1 class="text-center">Блог</h1>
 {% for post in object_list %}
-	<div class="post">
-		<h2><a href="{{post.url}}">{{post.title}}</a></h2>
-		{{post.content}}<br>
-		<small>{{post.created}}</small>
-	</div>
-{% endfor %}
-<br><br>
-{% endblock content %}
+<div class="post">
+	{% include 'blog/post.html' with view='list' %}
+</div>
+{% endfor %}	
+{% endblock content_blog %}

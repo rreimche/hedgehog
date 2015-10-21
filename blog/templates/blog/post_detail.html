@@ -1,10 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'blog/blog_base.html' %}
 
-{% block content %}
+{% block content_blog %}
 
-<div class="row">
-	<h1>{{title}}</h1>
-	{{content}}
-</div>
+{% include 'blog/post.html' with view='detail' %}
 
-{% endblock content %}
+{% endblock content_blog %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+{{block.super}}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="large-8 large-offset-2 columns">
+	{% block content_blog %}
+	{% endblock content_blog %}
+</div>
+{% endblock content %}

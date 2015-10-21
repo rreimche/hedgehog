@@ -1,0 +1,19 @@
+<div class="post">
+	{% if view == 'list' %}	
+		<h2><a href="{% url 'blog:detail' post.id %}">{{post.title}}</a></h2>
+	{% else %}
+		<h1>{{post.title}}</h2>
+	{% endif %}
+	{{post.content}}<br><br>
+	<small>
+		<span class="label secondary radius">{{post.created}}</span>
+		{% for category in post.categories.all %}
+			<span class="label info radius">{{category.name}}</span>
+			{% if not forloop.last %},{% else %}<br>{% endif %}
+		{% endfor %}
+					
+	</small>
+	{% if view == 'detail' %}
+		<p><a href="/blog/">назад в блог</a></p>
+	{% endif %}
+</div>
