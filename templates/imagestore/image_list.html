@@ -1,0 +1,64 @@
+{% extends "imagestore/base.html" %}
+{% load i18n %}
+{% load thumbnail %}
+{% load url from future %}
+{% load imagestore_tags %}
+
+{% block imagestore-breadcrumb %}
+    {% with "li" as scope_tag %}
+        {% include "imagestore/image-scope.html" %}
+    {% endwith %}
+{% endblock %}
+
+{% block title %}
+    {% include "imagestore/image-scope.html" %}
+{% endblock %}
+
+{% block imagestore-info %}
+    {% if view_user and IMAGESTORE_SHOW_USER %}
+        {% with user=view_user %}
+            {% include "imagestore/user_info.html" %}
+        {% endwith %}
+    {% endif %}
+    {% if album and IMAGESTORE_SHOW_USER %}
+        {% with user=album.user %}
+            {% include "imagestore/user_info.html" %}
+        {% endwith %}
+    {% endif %}
+
+{% endblock %}
+
+
+{% block controls %}
+    {% if album %}
+        {% if request.user == album.user or perms.imagestore.moderate_albums %}
+            <li><a href='{% url 'imagestore:update-album' pk=album.pk %}'>{% trans "Edit album" %}</a></li>
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="large-8 large-offset-2 columns galleries_container">
+    <h1>
+        {% include "imagestore/image-scope.html" %}
+    </h1>
+    {% include "imagestore/pagination.html" %}
+    <ul id="image-thumbnails" class="image-thumbnails small-block-grid-3 medium-block-grid-4">
+        {% for image in image_list %}
+            <li class='image-preview'>
+            {% thumbnail image.image "120x120" crop="center" as im %}
+                <a class="thumb" rel='gallery-image[ilist]' href="{{ image.image.url }}">
+                    <img class="preview" {% imagestore_alt image forloop.counter %} src="{{ im.url }}">
+                </a>
+            {% endthumbnail %}
+            </li>
+        {% endfor %}
+    </ul>
+    {% include "imagestore/pagination.html" %}
+    <div class="row">
+        <a href="/gallery/">назад к списку альбомов</a>
+    </div>
+</div>
+{% endblock %}
+
+

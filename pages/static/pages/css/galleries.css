@@ -1,0 +1,7 @@
+.galleries_container {
+	margin-bottom: 3em;
+}
+
+.album-list li, .image-thumbnails li {
+	text-align: center;
+}

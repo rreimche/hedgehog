@@ -5,6 +5,8 @@
 <title>{% block title %}Домашняя студия йоги "Ёж" в Киеве{% endblock title %}</title>
 {% endblock base_title %}
 
+{% block head %}
+{% endblock head %}
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{% static 'pages/css/core.css' %}">
@@ -22,18 +24,18 @@
         </ul>
         <section class="top-bar-section nofloat">
           <ul class="">
-            <li><a href="#">О студии</a></li>
+            <li><a href="/studio/">О студии</a></li>
             <li><a href="/blog/">Блог</a></li>
-            <li><a href="#">Занятия</a></li>
-            <li><a href="#">Фото</a></li>
-            <li><a href="#">Вопросы и ответы</a></li>
-            <li><a href="/sendmessage">Контакты</a></li>
+            <li><a href="/training/">Занятия</a></li>
+            <li><a href="/gallery/">Фото</a></li>
+            <li><a href="/faq/">Вопросы и ответы</a></li>
+            <li><a href="/sendmessage/">Контакты</a></li>
           </ul>
         </section> 
         <section class="top-bar-section nofloat social">
           <ul class="">
-            <li><a href="#" class="fi-social-facebook"></a></li>
-            <li><a href="/blog/" class="fi-social-instagram"></a></li>
+            <li><a href="https://www.facebook.com/kiev.yoga" class="fi-social-facebook"></a></li>
+            <li><a href="#" class="fi-social-instagram"></a></li>
             <li><a href="#" class="fi-social-twitter"></a></li>
           </ul>
         </section>   
@@ -80,4 +82,27 @@
   </div>
 </footer>
 
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
 {% endblock base_body %}
+
+{% block body_js %}
+  <script src="/media/blueimp/js/blueimp-gallery.min.js"></script>
+  <script>
+  document.getElementById('image-thumbnails').onclick = function (event) {
+      event = event || window.event;
+      var target = event.target || event.srcElement,
+          link = target.src ? target.parentNode : target,
+          options = {index: link, event: event},
+          links = this.getElementsByTagName('a');
+      blueimp.Gallery(links, options);
+  };
+  </script>
+{% endblock body_js %}
