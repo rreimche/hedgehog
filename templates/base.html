@@ -14,14 +14,14 @@
 {% block base_body %}
 <header>
   <nav id="topbar" class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-          <li class="name"><h1><a href="/"><img class="left" id="logo" src="{% static 'pages/images/logo.jpg' %}" alt="Домашняя студия йоги \"Ёж\" в Киеве"><span class="show-for-large-up left">Домашняя студия йоги &laquo;Ёж&raquo; в Киеве</span></a></h1></li>
+        <ul class="title-area nofloat">
+          <li class="name"><h1><a href="/"><img id="logo" class="left" src="{% static 'pages/images/logo.jpg' %}" alt="Домашняя студия йоги \"Ёж\" в Киеве"></a></h1></li>
 
            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
           <li class="toggle-topbar menu-icon"><a href="#"><span>Меню</span></a></li>
         </ul>
-        <section class="top-bar-section">
-          <ul class="right">
+        <section class="top-bar-section nofloat">
+          <ul class="">
             <li><a href="#">О студии</a></li>
             <li><a href="/blog/">Блог</a></li>
             <li><a href="#">Занятия</a></li>
@@ -29,7 +29,14 @@
             <li><a href="#">Вопросы и ответы</a></li>
             <li><a href="/sendmessage">Контакты</a></li>
           </ul>
-        </section>  
+        </section> 
+        <section class="top-bar-section nofloat">
+          <ul class="">
+            <li><a href="#" class="fi-social-facebook"></a></li>
+            <li><a href="/blog/" class="fi-social-instagram"></a></li>
+            <li><a href="#" class="fi-social-twitter"></a></li>
+          </ul>
+        </section>   
   </nav>
 </header>
 

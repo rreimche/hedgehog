@@ -53,3 +53,13 @@ a.fi-social-facebook:before, a.fi-social-instagram:before, a.fi-social-twitter:b
     /*pointer-events: none;*/
 }
 
+@media only screen and (max-width: 40em) {
+	.google-hack {
+	    padding-bottom: 100%; // This is the aspect ratio
+	}
+}
+
+
+.teacher {
+  margin-bottom: 1em;
+}

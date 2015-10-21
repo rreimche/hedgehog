@@ -3,9 +3,39 @@ header {
 	margin: 5px 0 1.3em;
 }
 
+@media only screen and (min-width: 757px){
+  #topbar *{
+    font-size: 100%;
+  }
+}
+
+@media only screen and (min-width: 40.063em){
+  #topbar {
+     text-align: center;
+     background: white;
+  }
+
+  #topbar .title-area, #topbar .top-bar-section.nofloat {
+    display: inline-block;
+    float: none;
+  }
+
+  #topbar .fi-social-facebook, #topbar .fi-social-instagram, #topbar .fi-social-twitter {
+    padding: 0;
+  }
+
+  #topbar .fi-social-facebook:before {
+    margin-left: 10px;
+  }
+}
+
+#topbar .fi-social-facebook, #topbar .fi-social-instagram, #topbar .fi-social-twitter {
+    font-size: 110%;
+}
+
 #topbar .title-area h1, #topbar .title-area h1 a, #topbar .title-area h1 a img {
-	height: 100%;
-	margin-right: 5px;
+  height: 100%;
+  /*margin-right: 5px;*/
 }
 
 #topbar.top-bar *{
@@ -14,19 +44,12 @@ header {
 }
 
 .top-bar .toggle-topbar.menu-icon a span::after {
-    
-    box-shadow: 0 0 0 1px #222,0 7px 0 1px #222,0 14px 0 1px #222;
+  box-shadow: 0 0 0 1px #222,0 7px 0 1px #222,0 14px 0 1px #222;
 }
+
 
 .nolabels label {
 	display: none;
-}
-
-
-@media only screen and (min-width: 40.063em){
-	.top-bar {
-	    background: white;
-	}
 }
 
 .footer {
