@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     #'django.contrib.admindocs',
     #'django.contrib.sites',
     'pages',
+    'faq',
     #'django.contrib.flatpages',
     'foundation',
     #'pipeline',
