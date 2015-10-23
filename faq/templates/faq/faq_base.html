@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+{{block.super}}
+{% endblock css %}
+
+{% block content %}
+<div class="large-8 large-offset-2 columns">
+	{% block content_faq %}
+	{% endblock content_faq %}
+</div>
+{% endblock content %}

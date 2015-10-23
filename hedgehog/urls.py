@@ -19,7 +19,7 @@ from django.contrib.sites.models import Site
 from django import views
 from pages import views as viewsPages
 from mailers import views as viewsMailers
-from faq.models import views as viewsFaq
+from faq import views as viewsFaq
 from . import settings
 
 urlpatterns = [
@@ -33,6 +33,6 @@ urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     url(r'^gallery/', include('imagestore.urls', namespace='imagestore')),
-    url(r'^faq/$', )
+    url(r'^faq/', include('faq.urls', namespace='faq')),
     #url(r'^(?P<url>.*/)$', views.flatpage),
 ]

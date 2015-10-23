@@ -1,4 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'faq/faq_base.html' %}
+{% load staticfiles %}
 
-{% block content %}
-{% endblock content %}
+{% block content_faq %}
+<h1 class="text-center">Ответы на вопросы</h1>
+{% for question in object_list %}
+<div class="post">
+	{% include 'faq/question.html' with view='list' %}
+</div>
+{% endfor %}	
+{% endblock content_faq %}
