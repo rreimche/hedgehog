@@ -1,4 +1,6 @@
-from django.shortcuts import render  #, get_object_or_404
+# coding=utf-8
+
+from django.shortcuts import render, get_object_or_404
 #from django.http import HttpResponse
 #from django.template import RequestContext, loader
 from .models import Page
@@ -12,6 +14,10 @@ from django.views import generic
 #	page = get_object_or_404(Page, id = page_id) 	
 #	return render(request, 'pages/page_detail.html', {'page':page})
 
+class DetailView(generic.DetailView):
+	model = Page
+	#template_name = 'pages/detail.html'
+
 def home(request):
 	context = {
 		'contact_form' : ContactForm(),
@@ -19,6 +25,21 @@ def home(request):
 	}
 	return render(request, 'pages/home.html', context)
 
-class DetailView(generic.DetailView):
-	model = Page
-	#template_name = 'pages/detail.html'
+def studio(request):
+	return render_by_title(request, 'О студии')
+
+def training(request):
+	return render_by_title(request, 'Занятия')
+
+def contacts(request):
+	return render_by_title(request, 'Контакты')
+
+
+
+def render_by_title(request, the_title):
+	context = {
+		'page' : get_object_or_404(Page, title=the_title),  # TODO page title
+	}
+	if the_title == 'Контакты':
+		context['contact_form'] = ContactForm()
+	return render(request, 'pages/page_detail.html', context)

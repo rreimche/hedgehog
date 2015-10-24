@@ -34,5 +34,9 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     url(r'^gallery/', include('imagestore.urls', namespace='imagestore')),
     url(r'^faq/', include('faq.urls', namespace='faq')),
+    url(r'^studio/$', viewsPages.studio, name='o-studii'),
+    url(r'^training/$', viewsPages.training, name='training'),
+    url(r'^contacts/$', viewsPages.contacts, name='contact'),
+
     #url(r'^(?P<url>.*/)$', views.flatpage),
 ]
