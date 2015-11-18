@@ -4,7 +4,7 @@
 	{% else %}
 		<h1>{{post.title}}</h2>
 	{% endif %}
-	{{post.content}}<br><br>
+	{{post.content | safe}}<br><br>
 	<small>
 		<span class="label secondary radius">{{post.created}}</span>
 		{% for category in post.categories.all %}
