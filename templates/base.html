@@ -11,6 +11,7 @@
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{% static 'pages/css/core.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'foundation/css/foundation-icons.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'pages/grands-font/style.css' %}">
 {% endblock css %}
 
 {% block base_body %}
@@ -35,8 +36,7 @@
         <section class="top-bar-section nofloat social">
           <ul class="">
             <li><a href="https://www.facebook.com/kiev.yoga" class="fi-social-facebook"></a></li>
-            <li><a href="#" class="fi-social-instagram"></a></li>
-            <li><a href="#" class="fi-social-twitter"></a></li>
+            <li><a href="http://vk.com/yoga.kiev" class="grands" data-icon="&#xe003;"></a></li>
           </ul>
         </section>   
   </nav>
@@ -51,16 +51,16 @@
 <footer class="footer">
   <div class="row">
     <div class="small-12 medium-6 large-5 columns">
-      <p class="logo"><i class="fi-shield"></i> Ёж-студия</p> 
+      <p class="logo"><i class="fi-web"></i> Ёж-студия</p> 
       <p class="footer-links">
-        <a href="#">О нас</a>
-        <a href="#">Блог</a>
-        <a href="#">Занятия</a>
-        <a href="#">Фото</a>
-        <a href="#">Вопросы и ответы</a>
-        <a href="#">Контакты</a>
+        <a href="/studio/">О студии</a>
+        <a href="/blog/">Блог</a>
+        <a href="/training/">Занятия</a>
+        <a href="/gallery/">Фото</a>
+        <a href="/faq/">Вопросы и ответы</a>
+        <a href="/contacts/">Контакты</a>
       </p>
-      <p class="copywrite">Здесь можно влепить копирайт © 2015</p>
+      <p class="copywrite hide">Здесь можно влепить копирайт © 2015</p>
     </div>
     <div class="small-12 medium-6 large-4 columns">
       <ul class="contact">
@@ -70,13 +70,11 @@
       </ul>
     </div>
     <div class="small-12 medium-12 large-3 columns">
-      <p class="about">О студии</p>
+      <p class="about hide">О студии</p>
       <p class="about subheader">Здесь можно ещё что-нибудь написать.</p>
-      <ul class="inline-list social">
+      <ul class="inline-list social hide">
         <a href="#"><i class="fi-social-facebook"></i></a>
-        <a href="#"><i class="fi-social-twitter"></i></a>
-        <a href="#"><i class="fi-social-linkedin"></i></a>
-        <a href="#"><i class="fi-social-github"></i></a>
+        <a href="http://vk.com/yoga.kiev" class="grands" data-icon="&#xe003;"></a>
       </ul>
     </div>
   </div>
